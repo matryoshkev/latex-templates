@@ -1,2 +1,2 @@
 # latex-templates
-LaTeX templaates for common document types
+LaTeX templates for common document types
