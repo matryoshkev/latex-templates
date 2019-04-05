@@ -1,0 +1,366 @@
+% Template for a scientific research article
+% version 0.2, April 2019
+% jeff smith
+
+\documentclass[11pt]{article}
+
+\input{article-style.tex}  % Most formatting defined in this file
+
+\title{Research article template: LaTeX, structure, and style}
+
+\author[1*]{jeff smith}
+\author[2]{Middle Author}
+\author[2]{Last Author}
+
+\affil[1]{No affiliation, St. Louis, Missouri, USA} 
+\affil[2]{Department of Biology, State University, College Town, State, USA}
+\affil[*]{Correspondence: matryoshkev@gmail.com}
+
+\date{\today}
+
+\begin{document}
+
+\baselineskip = 16pt  % Line spacing
+
+%% 
+%% TITLE PAGE
+%% 
+
+\maketitle
+
+\subsection{Main messages}
+\begin{itemize}
+	\item Have a very small number of findings you want people to remember. 
+	\item Structure the whole paper around these main messages. 
+	\item Title, abstract, figures, subsection titles\ldots~all of it should help communicate the main messages. 
+\end{itemize}
+
+\vskip 16 pt 
+\subsection{Draft status}
+\begin{itemize}
+	\item Keep track of the paper's status here. 
+	\item What's done and what still needs work. 
+	\item Put revisions made since the last round of comments in \textcolor{red}{red text} so your collaborators can easily see what's changed. 
+	\item What kind of feedback would help right now? 
+\end{itemize}
+
+\begin{itemize}
+	\item Still updating template from old work. 
+	\item Need bibliography implementation. 
+	\item Plenty of room for more text about style and content. 
+\end{itemize}
+
+%% 
+%% ABSTRACT
+%% 
+
+\newpage
+
+\linenumbers
+\section{Abstract}
+
+One or two sentences providing a basic introduction to the field, comprehensible to a scientist in any discipline. Two to three sentences of more detailed background, comprehensible to scientists in related disciplines. One sentence clearly stating the general problem being addressed by this particular study. One sentence summarising the main result (with the words ``here we show'' or their equivalent). Two or three sentences explaining what the main result reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge. One or two sentences to put the results into a more general context. Maybe two or three sentences to provide a broader perspective, readily comprehensible to a scientist in any discipline. ---from \textit{Nature} guide for authors
+
+
+
+
+%% 
+%% INTRODUCTION
+%% 
+\clearpage 
+\section{Introduction}
+
+Big question. 
+
+Main hypothesis. (The main one this paper is dealing with, at least). 
+
+What we still don't know. Be sure to discuss alternative hypotheses and other possible things that could be going on instead. 
+
+Here we address this issue in our favorite organism, the common name \textit{Genus species}. Describe the relevant biology of this organism in enough detail that readers who haven't heard of it before can understand what's going on. Our closer colleagues who work in other systems will also appreciate the reminder. Include just enough background that a reader will understand how this system is really good for addressing the big question. Avoid anything extraneous to the big question.
+
+Describe how the big question plays out in this specific system. Specifically point out what crucial bit of information is still unknown. It should be the bit we provide in this paper.
+
+To test the main hypothesis, we briefly describe the general experimental approach. Specifically, we test the hypothesis' predictions that X, Y, and Z. Some journals might want us to briefly state our findings here, but I prefer not to. That's what the abstract is for! 
+
+% Figure: First figure
+\begin{figure}[p]
+% \includegraphics{fig-pdf-file}
+\caption{
+It's often a good idea to have the first figure, or the first part of a figure, be a diagram of the experimental design. Or perhaps a diagram of the main hypothesis and its predictions. A strong image helps people remember and internalize the paper's findings. 
+\textbf{(A)} For writing and reviewing, it helps to have figures in the manuscript text, near where they're appropriate. 
+\textbf{(B)} Journals will want figures and their legends separated out once the paper is accepted. 
+}
+\label{fig:first-figure}
+\end{figure}
+
+
+
+%% 
+%% METHODS
+%% 
+\clearpage
+\section{Methods}
+
+\subsection*{Theoretical model}
+
+Table~\ref{tab:notation} summarizes our mathematical notation. ... numerically solve equations \texttt{mle2()} ... 
+
+
+\subsection{Strains and culture conditions}
+
+Describe what strains we used, what?s important about them in terms of this paper, and where they come from. We stored all strain in 20\% (v/v) glycerol at -80 C (or whatever).
+
+\subsection{Assays and experiments}
+
+Describe experiments in the order you present them in the Results. For each set of experiments, first birefly summarize the goal and overall experimental strategy. Then go into each step-by-step with enough detail that a researcher familiar with this general set of techniques could replicate the experiments. For each step, briefly explain what the goal of the step is. For example: to kill any remaining vegetative cells, we incubated tubes for 3 hr at 45 C.
+
+Use the past tense and the active voice. Remember that cells, tubes, and whatnot can also be
+actors. For example: cell populations grew for 24 hr at 32 C until we put them on ice.
+
+Describe how many experimental blocks there were and what treatments were included in each block. Ideally, each experimental block would include each treatment exactly once. State how each experimental block was (hopefully) a biological replicate performed on different days with strains independently grown from freezer stocks.
+
+\subsection{Calculations and statistics}
+
+Describe how we calculated growth rates/fitness/whatever in terms of of colony counts/OD600/etc, including a mathematical formula for maximum clarity. For example: If $q$ is the initial frequency of some strain and $q'$ is its frequency at the end of the assay, then we calculated the strain's relative fitness $v$ as
+\begin{equation*}
+	v = \frac{q'/q}{(1-q')/(1-q)} \, .
+\end{equation*}
+
+All data were analyzed using the R software environment for statistical computing (). 
+We fit statistical models to fitness outcomes by least squares regression via the \texttt{lm()} command in R. We excluded zeroes when analyzing log-transformed quantities. It's probably best to cite the relevant papers for specialized software and packages so that their authors get credit and have incentive to keep making things that help us do better science.
+
+... we fit models of the form $m \sim g + G + gG$, $M \sim G$, and $\Delta m \sim G$ or $\sim \ln(G/(1-G))$ ... We evaluated the performance of statistical models using the Akaike Information Criterion (AIC; \textit{ref}), calculated using \texttt{AIC()}. 
+
+% Table: Mathematical notation and definitions
+% 	Rely on this table for the mathematical specifics as much as possible. 
+% 	It lets us take a lot of small equations and statements out of the main text. 
+% \clearpage
+\begin{table}[t]
+	\caption{Mathematical notation and fitness measures}
+	\label{tab:notation}
+	% \bigskip
+	\small
+	\begin{tabular}{ c c l }
+		\textbf{Term} & \textbf{Definition} & \textbf{Description} \\ 
+		\hline \hline
+		$n_i$	& & Initial number of strain $i$ individuals\\
+		$n'_i$	& & Final number of strain $i$ individuals \\
+		$N$		& $n_\text{A} + n_\text{B}$ 
+				& Total initial number of individuals \\
+		% $N'$	& $n'_i + n'_j$ 
+		$N'$	& $n'_\text{A} + n'_\text{B}$ 
+				& Total final number of individuals \\
+		$q_i$	& $n_i / N$ 
+				& Initial proportion strain $i$ \\
+		$q'_i$	& $n'_i / N'$
+				& Final proportion strain $i$ \\
+		\hline
+		$w_i$	& $n'_i / n_i$ 
+				& Absolute Wrightian fitness of strain $i$ \\
+		$W$		& $N'_i / N_i$ 
+				& Total group fitness \\
+		$\Delta w$		& $w_\text{A} - w_\text{B}$ 
+				& Within-group fitness difference \\
+		$$		& $w_\text{A} / w_\text{B}$ 
+				& Within-group fitness ratio \\
+		% \hline
+		$m_i$	& $\ln w_i$ 
+				& Malthusian fitness of strain $i$ \\
+		$M$		& $\ln W$ 
+				& Malthusian fitness of total group \\
+		$\Delta m$		& $m_\text{A} - m_\text{B}$ 
+				& Within-group difference in Malthusian fitness \\
+		\hline
+		$g_i$	& 
+				& Genotypic value of strain $i$ \\
+		$G$		& $\sum q_i g_i$
+		% $G$		& $q_\text{A} g_\text{A} + q_\text{B} g_\text{B}$
+				& Mean group genotype \\
+		\hline
+	\end{tabular}
+	\bigskip
+\end{table}
+
+
+
+
+%% 
+%% RESULTS
+%% 
+\clearpage
+\section{Results}
+
+\subsection{First main message}
+
+To test the main hypothesis that whatever, we general experimental approach and then measured whether the predicted stuff actually happened (Fig.~\ref{fig:first-figure}). 
+We found that...
+Clearly state which specific results are consistent or inconsistent with the predictions of the specific hypothesis so that readers will what's most important here. 
+
+\subsection{Second main message}
+
+Avoid making too much inference in the Results. Shoot for ``just the facts, ma'am''. Readers should be able easily understand what we actually did and saw, independent of all the theory, hypotheses, and background that motivated us. Readers might be interested in these results for a completely different reason than we were. 
+
+... supplemental material
+
+This is often the shortest section of the main text. 
+... summary paragraph at end of each section?
+
+
+% Figure
+% \clearpage
+\begin{figure}[p]
+% \includegraphics{figure-pdf}
+\caption{
+Description of the figure's main message---the point that readers are supposed to take away. 
+\textbf{(A)} State what aspect of the data is important, and what it means for the paper's argument.   
+\textbf{(B)} It could be one bar being larger than another, a line's slope being steeper, or something else. 
+In all plots, data points show replicate experiments and lines show fitted statistical models. 
+}
+\label{fig:second-figure}
+\end{figure}
+
+
+
+
+%% 
+%% DISCUSSION
+%% 
+\clearpage
+\section{Discussion}
+
+\subsection{Main finding}
+
+Briefly summarize the main question we asked here, the strategy we used to address it, and the one-sentence version of the main result.
+
+Discuss the most important results first (in the same order as the Results section, where pos- sible). This is where we argue how our specific findings support the paper's main claim. Be very careful with wording here: be bold but don't overstep what the data can actually show.
+
+Discuss how our main results relate to previous work in this area. Clearly spell out what's novel with this paper. Colleagues will appreciate anything we cite of theirs that's kind of like what we did. If we don't cite it, they might feel snubbed.
+
+\subsection{Other findings}
+
+Discuss results that are interesting but not central to the paper's main point. This often ends up including things that were once a central focus of the project but became secondary as the project's scope changed. Maybe the data didn't warrant the grand claims. Maybe there was an axe being ground that didn't need to be. Maybe we discovered late in the project that some of our results weren't actually novel.
+
+\subsection{Conclusions}
+
+To conclude, briefly summarize the goal of the project and its main result. It might end with a brief big picture statement. Maybe mention potential applications to or implications for health or environmental issues. Some journals want conclusions as their own separate section, but it's also fine to have it be the last paragraph or subsection of the Discussion. 
+
+
+
+%% 
+%% ACKNOWLEDGMENTS, ETC
+%% 
+\newpage
+
+\section{Data accessibility}
+
+Data supporting the results of this article are available in the Dryad repository, [unique persis- tent identifier] (http://dx.doi.org/xxxxx). DNA sequences: Genbank accessions X123456-X123457 (http://dx.doi.org/xxxxx). Phylogenetic data, including alignments: TreeBASE accession number S9123 (http://dx.doi.org/xxxxx).
+
+\section{Acknowledgements}
+
+Many thanks to somebody for providing strains, somebody for experimental advice, somebody for statistical advice, and somebody for discussion and comments on the manuscript. This work was supported by Organization grant AB12345 to somebody.
+
+\section{Author contributions}
+
+Conceived project: js. Formulated and analyzed mathematical model: js, LA. Designed experiments: js, MA, LA. Conducted experiments: js, MA. Analyzed data: js. Interpreted results and organized their presentation: js, MA, LA. Wrote manuscript: js, MA, LA. 
+
+
+%% 
+%% REFERENCES
+%% 
+
+\section*{References}
+
+
+
+%% 
+%% SUPPLEMENTAL MATERIAL
+%% 
+
+\appendix
+
+\clearpage
+\setcounter{page}{1}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\theequation}{S\arabic{equation}}
+\setcounter{equation}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+% \renewcommand{\thepostfigure}{S\arabic{postfigure}}
+% \setcounter{postfigure}{0}
+
+\subsection{Supplemental Material for}
+\maketitle
+
+\subsection{Contents}
+Supplemental Mathematics \dotfill \pageref{sec:supplemental-math} \\
+Supplemental References \dotfill \pageref{sec:supplemental-references} \\
+\\
+Table \ref{tab:datasets}: Analyzed datasets 
+	\dotfill \pageref{tab:datasets} \\
+Table \ref{tab:model-comparisons}: Model comparisons 
+	\dotfill \pageref{tab:model-comparisons} \\
+\\
+Figure \ref{fig:nonadditivity-components}: Supplemental Results
+	\dotfill \pageref{fig:nonadditivity-components}\\
+Figure \ref{fig:Fiegna-2006-OC-wt}: Analyzed mix experiments
+	\dotfill \pageref{fig:Fiegna-2006-OC-wt}\\
+
+
+% Supplement header & footer
+\clearpage
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Short version of paper title}
+\rhead{\small smith \& Coauthor 2019}
+\cfoot{\small \thepage}
+
+% 
+% Supplemental math
+% 
+\clearpage
+\section*{Supplemental mathematics}
+\label{sec:supplemental-math}
+
+
+% 
+% Supplemental figures
+% 
+% \label{sec:supplemental-figs}
+
+% Figure: Components of nonmultiplicativity
+\begin{figure}[p]
+% \includegraphics{figS-nonadditivity-components}
+\caption{\textbf{(A)} Fitness models usually perform better when they allow frequency-dependent selection within groups and interactions between individual and neighbor genotype. \textbf{(B)} Allowing Malthusian fitness outcomes to be quadratic functions of mixing proportion sometimes improves model performance. Data show AIC difference between models for each dataset. 
+% Negative $\Delta\text{AIC}$ indicates better fit. 
+See Table \ref{tab:model-comparisons} for model details.}
+\label{fig:nonadditivity-components}
+\end{figure}
+
+% 
+% Supplemental references
+% 
+% \clearpage
+\section{Supplemental references}
+\label{sec:supplemental-references}
+
+
+% 
+% Orphaned text
+% 
+\clearpage
+% \nolinenumbers
+\pagestyle{empty}
+\section{Orphaned text}
+
+\begin{itemize}
+	\item While writing, it can helps to have a ``recycle bin'' at the end of the paper
+	\item Maybe the framing changes and a once-marginal message become important
+	\item Maybe you decide you like the way you phrased something in an earlier draft
+	\item Maybe the text can be used in another paper later on
+	\item Sometimes it's better to just get something out of your system and then decide whether to include it later on. ``Don't try to create and analyze at the same time. They're different processes.''---John Cage 
+\end{itemize}
+
+
+
+\end{document}

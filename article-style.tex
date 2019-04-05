@@ -1,0 +1,53 @@
+% Various formatting for manuscripts
+
+\usepackage[top = 1in, bottom = 1in, left = 1in, right = 1in]{geometry}
+\usepackage{amsmath}
+\renewcommand*\sfdefault{phv} % Helvetica for the sans-serif font
+\usepackage{lineno} \modulolinenumbers[5]  % Usage: \linenumbers or \nolinenumbers
+\usepackage{enumitem} \setlist[itemize]{noitemsep} \setlist[enumerate]{noitemsep} % Lists
+
+% Headings
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\sffamily\LARGE\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalfont\sffamily\large}{}{0em}{}
+\titleformat{\subsubsection}{\normalfont\sffamily}{}{0em}{}
+\titlespacing*{\section}{0pt}{36pt}{12pt}
+\titlespacing*{\subsection}{0pt}{24pt}{10pt}
+
+% Figures and tables
+\usepackage{graphicx}  % For inserting pdf figures
+	\graphicspath{ {./figures/} }
+\usepackage{floatrow}  % For captions to the side of figures
+	\floatsetup[table]{capposition=top}
+\usepackage{caption}
+	\captionsetup[figure]{font = small, labelfont = bf, singlelinecheck = off}
+	\captionsetup[table]{font = small, labelfont = bf, singlelinecheck = off}
+% \usepackage{subcaption}
+% \renewcommand{\thesubfigure}{\Alph{subfigure}}
+
+% Other formatting
+\usepackage{fancyhdr}  % Headers and footers in Supplemental Material
+\renewcommand{\arraystretch}{1.3}  % Table row spacing
+\usepackage{color}  % Usage: \textcolor{red}{Red text here.}
+	\definecolor{red}{rgb}{0.7,0.1,0}
+	\definecolor{blue}{rgb}{0.1,0.1,0.7}
+
+% Authors and affiliations
+\usepackage{authblk}
+\renewcommand*{\Affilfont}{\footnotesize\sffamily}
+\renewcommand*{\Authfont}{\large\sffamily}
+
+% Title format
+\makeatletter
+\renewcommand{\maketitle}{
+	\begin{flushleft}
+		{\huge\sffamily\bfseries\@title\par} \vskip 20pt
+		{\large\sffamily\@author\par} \vskip 12pt
+		{\small\sffamily\@date\par} \vskip 24pt
+		% keywords
+		\vskip 24pt
+	\end{flushleft}
+}
+\makeatother
+
+
