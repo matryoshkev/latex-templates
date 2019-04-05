@@ -206,17 +206,46 @@ This is often the shortest section of the main text.
 ... summary paragraph at end of each section?
 
 
-% Figure
+%% Figure
+%% \clearpage
+%\begin{figure}[p]
+%% \includegraphics{figure-pdf}
+%\caption{
+%Description of the figure's main message---the point that readers are supposed to take away. 
+%\textbf{(A)} State what aspect of the data is important, and what it means for the paper's argument.   
+%\textbf{(B)} It could be one bar being larger than another, a line's slope being steeper, or something else. 
+%In all plots, data points show replicate experiments and lines show fitted statistical models. 
+%}
+%\label{fig:second-figure}
+%\end{figure}
+
+
+
+% Figure: First message
 % \clearpage
 \begin{figure}[p]
 % \includegraphics{figure-pdf}
 \caption{
 Description of the figure's main message---the point that readers are supposed to take away. 
-\textbf{(A)} State what aspect of the data is important, and what it means for the paper's argument.   
-\textbf{(B)} It could be one bar being larger than another, a line's slope being steeper, or something else. 
+Okay to use sentence fragments. 
+\textbf{(A)} State what aspect of the data is important, and what it means for the paper's argument. It could be one bar being larger than another, a line's slope being steeper, or something else. 
+\textbf{(B)} Don't just say ``Relationship between X and Y'' without saying why anyone should care. If this is a control experiment, say so, and say what it's controlling for (effect of genetic markers, for example). Symbol shape, color, and line type should be explained in figure itself. 
 In all plots, data points show replicate experiments and lines show fitted statistical models. 
 }
-\label{fig:second-figure}
+\label{fig:first-message}
+\end{figure}
+
+% Figure: Second message
+% \clearpage
+\begin{figure}[p]
+% \includegraphics{figure-pdf}
+\caption{
+Figures should be understandable even if you've only read the abstract and haven't yet read any of the main text. That means as few acronyms as we can get away with. 
+\textbf{(A)} Make sure strain names have meaningful annotations like ``Wild-type strain GJV2'', ``Evolved strain GVB32.1'', and ``Natural isolate A47''. 
+\textbf{(B)} Axis descriptions should include units: hr, cells/ml, /hr, and so on. 
+\textbf{(C)} No axis should just say ``Fitness''. At least say whose fitness and what calculated value is being plotted: Relative fitness of mutant ($v$). When possible, just describe the fitness measure directly: Spores/cell, Growth rate (/hr), Stationary phase density (OD600), \textit{etc}. 
+}
+\label{fig:second-message}
 \end{figure}
 
 
