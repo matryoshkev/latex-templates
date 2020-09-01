@@ -1,0 +1,83 @@
+\mode<presentation>
+
+% Dependencies
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % For inserting pdf images
+\usepackage{setspace} % For spacing in \titlemessage{}
+\usepackage{xcolor}
+% \usepackage{amssymb}
+% \usepackage{amsmath}
+
+% 
+% FONTS
+%
+
+\renewcommand*\sfdefault{phv} % Helvetica for the sans-serif font
+
+% \setbeamerfont{normal text}{size=\small}
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+% \setbeamerfont{subtitle}{size=\normalsize, series=\fontseries{m}, parent=structure}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\LARGE, series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize, series=\fontseries{m}}
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{block title alerted}{size=\normalsize, series=\bfseries}
+\setbeamerfont{block body alerted}{size=\small}
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{alerted text}{series=\bfseries}
+
+%
+% COLORS
+% 
+
+\definecolor{matryoshkevGreyDark}{rgb}{0.25,0.25,0.25}
+\definecolor{matryoshkevGrey}{rgb}{0.65,0.65,0.65}
+\definecolor{matryoshkevGreyLight}{rgb}{0.75,0.75,0.75}
+\definecolor{matryoshkevGreyVeryLight}{rgb}{0.95,0.95,0.95}
+\definecolor{matryoshkevBlueLight}{rgb}{0.50,0.75,0.88}
+\definecolor{matryoshkevBrownDark}{rgb}{0.3,0.2,0.2}
+\definecolor{matryoshkevBrownLight}{rgb}{0.75,0.7,0.6}
+\definecolor{matryoshkevRed}{rgb}{0.7,0,0.1}
+
+\setbeamercolor{structure}{fg=matryoshkevGreyDark}
+% \setbeamercolor{title}{fg=matryoshkevBrownDark}
+\setbeamercolor{subtitle}{fg=matryoshkevGreyLight}
+\setbeamercolor{author}{fg=matryoshkevGreyDark}
+\setbeamercolor{institute}{fg=matryoshkevGreyLight}
+\setbeamercolor{date}{fg=matryoshkevGreyLight}
+% \setbeamercolor{frametitle}{fg=matryoshkevBrownDark}
+% \setbeamercolor{framesubtitle}{fg=matryoshkevGreyLight}
+
+\setbeamercolor{alerted text}{fg=matryoshkevRed}
+
+\setbeamercolor{block title}{fg=matryoshkevGreyDark,bg=white}
+\setbeamercolor{block body}{bg=matryoshkevGreyVeryLight}
+\setbeamercolor{block title alerted}{fg=matryoshkevRed}
+\setbeamercolor{block body alerted}{fg=matryoshkevRed}
+
+\setbeamercolor{caption}{fg=matryoshkevGreyLight}
+
+% 
+% TEXT STYLES
+% 
+
+\newcommand{\titlemessage}[1]{%
+	\begin{spacing}{0.75}
+		{\huge\usebeamercolor[fg]{frametitle}{\textbf{#1}}\par}
+	\end{spacing}%
+}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{caption}{\insertcaption\par} % Remove "Figure:" from figures
+
+%
+% SLIDE STYLES
+% 
+
+\setbeamertemplate{background}{}
+\setbeamertemplate{navigation symbols}{}
+
+\mode<all>

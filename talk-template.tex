@@ -1,0 +1,308 @@
+\documentclass[smaller,aspectratio=149]{beamer}
+% \usepackage[utf8]{inputenc}
+
+\title{Concise descriptive title with important keywords}
+% \subtitle{Lighthearted subtitle, perhaps}
+\author{\textbf{First Author}, Second author, Last author}
+\institute{Some University, Perhaps with location}
+\date{Conference Name 2020}
+
+% Formatting
+\usetheme{matryoshkev}
+\graphicspath{ {./images/} } % Folder where images are stored
+
+\begin{document}
+
+%% 
+%% TITLE SLIDE
+%% 
+
+\frame{\titlepage}
+
+% Acknowledgments
+\begin{frame}{}
+	\begin{centering}
+		\begin{minipage}[t]{0.3\linewidth}
+			\begin{centering}
+				\frame{\includegraphics[height=0.35\textheight,width=0.3\textheight]{example-image}}\par
+				\textbf{Second Author}\\{\footnotesize Some University}\par
+			\end{centering}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\linewidth}
+			\begin{centering}
+				\frame{\includegraphics[height=0.35\textheight,width=0.28\textheight]{example-image}}\par
+				\textbf{Last Author}\\{\footnotesize University of Somewhere}\par
+			\end{centering}
+		\end{minipage}
+		\begin{minipage}[t]{0.35\linewidth}
+			\begin{centering}
+				\frame{\includegraphics[height=0.35\textheight]{example-image}}\par
+				\textbf{Undergrad 1}\\\textbf{Undergrad 2}\\{\footnotesize My Institute}\par
+			\end{centering}
+		\end{minipage}
+	\end{centering}\par
+	\bigskip\medskip
+	\begin{small}
+		Don't flub the ending---make your acknowledgements here \par
+		\smallskip Include funding you're responsible for \par
+	\end{small}
+\end{frame}
+
+%% Plain text slide
+%\begin{frame}{Slide title text}
+%% \framesubtitle{Subtitle for context?}
+%	Plain text in a slide with no environment. Generally it's not a good idea to have large blocks of text on a slide. Especially with no image. If the audience is reading, they're not listening to you.\par 
+%	\medskip Instead try to:
+%	\begin{itemize}\setlength\itemsep{0pt}
+%		\item Use short sentence fragments
+%		\item Include an image
+%		\item Make slide title the main message
+%	\end{itemize}
+%	\smallskip Paragraphs spaced manually with \texttt{smallskip}, \texttt{medskip}, \textit{etc.}\par 
+%	\bigskip \textbf{Bold text}\par
+%	{\small Lets you make definitions}\par
+%	\medskip \textbf{Bold text}\par
+%	{\small Also works for comparisons}\par
+%\end{frame}
+
+%% 
+%% INTRODUCTION
+%% 
+
+% Two columns, right image
+\begin{frame}{}
+	\begin{columns}[T]
+		\column{0.62\textwidth}
+		\titlemessage{Use titles to state slide's main message}
+		\bigskip\bigskip
+		Include image illustrating main message\par
+		\bigskip Just enough text to catch up if someone didn't hear you
+		\begin{itemize}\setlength\itemsep{0pt}
+			\item Use short sentence fragments
+			\item If audience is reading, they're not listening
+		\end{itemize}
+		\column{0.38\textwidth}
+		\begin{centering}%
+			\frame{\includegraphics[width=\linewidth,height=0.75\paperheight]{example-image}}\par%
+		\raggedleft\tiny{Image credit}\par
+		\end{centering}	
+	\end{columns}
+\end{frame}
+
+% Vary layout
+\begin{frame}{}
+\begin{columns}[T]
+	\column{0.4\textwidth}
+	\frame{\includegraphics[width=\linewidth,height=0.75\paperheight]{example-image}}\\%
+	\tiny{Image credit}\par
+	\column{0.6\textwidth}
+	\titlemessage{Vary slide layout to avoid monotony}
+	\bigskip\bigskip
+	But don't distract from the message \par
+	\medskip Image on left when it makes sense to see image before title \par
+	\begin{itemize}
+		\item Introducing biology motivating the overall research question
+		\item Introducing study system
+		\item When image is only visual accesory
+	\end{itemize}
+\end{columns}
+\end{frame}
+
+%%
+%% MODEL AND PREDICTIONS
+%% 
+\section{Model and predictions} 
+
+% Progressive display
+\begin{frame}{}
+\begin{columns}[T]
+	\column{0.5\textwidth}
+	% {\usebeamerfont{title}\usebeamercolor[fg]{title}Use progressive display for clarity}\par
+	\titlemessage{Use progressive display for clarity}
+	\bigskip\bigskip
+	\onslide<1->Don't confuse audience with too much at once \par
+	\onslide<2->\medskip Use \texttt{onslide} to show slides bit by bit \par
+	\onslide<3->\bigskip \alert{Highlight the specific research question your results will answer}
+	\column{0.5\textwidth}
+	\begin{centering}%
+		\onslide<1->\frame{\includegraphics[width=\linewidth,height=0.35\paperheight]{example-image-a}}\par
+		\onslide<2->\medskip\frame{\includegraphics[width=\linewidth,height=0.35\paperheight]{example-image-b}}\par
+	\end{centering}
+\end{columns}
+\end{frame}
+
+%% 
+%% FIRST RESULTS SECTION
+%% 
+\section{First results section}
+
+% Slide with single image
+\begin{frame}{}
+	\titlemessage{Slide with single image}
+	\bigskip\bigskip
+	\begin{columns}[T]
+		\column{0.36\textwidth}
+		Good for single-panel figure\par
+		\medskip Describe setup if necessary \par
+		\medskip State how data supports main conclusion
+		\column{0.55\textwidth}
+		\begin{centering}%
+			\frame{\includegraphics[width=\linewidth]{example-image}}\par%
+			% \includegraphics[width=\linewidth]{methods-exptl-design}\par%
+		\end{centering}	
+	\end{columns}
+\end{frame}
+
+% Wide image
+\begin{frame}{}
+	\titlemessage{Slide with wide image}
+	\bigskip\medskip
+	\begin{centering}%
+		\frame{\includegraphics[width=\textwidth,height=0.4\paperheight]{example-image}}\par%
+	\end{centering}
+	\bigskip
+	\begin{columns}[T]
+		\column{0.41\textwidth}
+		Good for multipart figures \par
+		\column{0.5\textwidth}
+		Use two columns of text if you need to
+		\begin{itemize}
+			\item Bottom of slide can be hard to see
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+%% 
+%% SECOND RESULTS SECTION
+%% 
+\section{Second results section}
+
+% Side by side images
+\begin{frame}{}
+	\titlemessage{Slide with side by side images}\bigskip\medskip
+	\begin{columns}[T]
+		\column{0.45\textwidth}
+		\begin{overprint}
+			\onslide<1>\raggedleft\frame{\includegraphics[width=\textwidth]{example-image}}\par%
+			\onslide<2->\raggedleft\frame{\includegraphics[width=\textwidth]{example-image-a}}\par%
+		\end{overprint}
+		\onslide<1->{\bigskip Good for complex results \par}
+		\onslide<2->{\smallskip Lets you explain axes \par}
+		\column{0.45\textwidth}
+		\begin{overprint}
+			\onslide<-2>\raggedright\frame{\includegraphics[width=\textwidth]{example-image}}\par%
+			\onslide<3->\raggedright\frame{\includegraphics[width=\textwidth]{example-image-b}}\par%
+		\end{overprint}
+		\onslide<3->\bigskip Then results one at a time \par
+	\end{columns}
+\end{frame}
+
+% Blocks
+%\begin{frame}{Block environments}
+%\begin{columns}
+%	\column{0.45\textwidth}
+%	\begin{block}{Block title}
+%		Block body text\par
+%		\smallskip Useful for comparing things\par
+%	\end{block}
+%	\begin{block}{Another block title}
+%		%More block body text\par
+%		\begin{itemize}\setlength\itemsep{0pt}
+%			\item First item
+%			\item Second item
+%		\end{itemize}
+%	\end{block}
+%	\begin{alertblock}{Alertblock title}
+%		Alertblock body text
+%	\end{alertblock}
+%	\column{0.55\textwidth}
+%	\begin{centering}%
+%		\includegraphics[width=\linewidth]{intro-plasmid-transmission.pdf}%
+%	\end{centering}	
+%\end{columns}
+%\end{frame}
+
+%% 
+%% DISCUSSION
+%% 
+
+% Further questions
+\begin{frame}{}
+\begin{columns}[T]
+	\column{0.4\textwidth}
+	\frame{\includegraphics[width=\linewidth,height=0.8\paperheight]{example-image}}\\%
+	\tiny{Image credit}\par
+	\column{0.6\textwidth}
+	\titlemessage{Further questions}
+	\bigskip\bigskip
+	Good science opens up new questions \par
+	\medskip Perhaps you got unexpected results that might be caused by something cool \par
+	\medskip Want audience excited about your next projects \par
+	\medskip They often have good ideas about what to explore \par
+\end{columns}
+\end{frame}
+
+% Key findings
+{\setbeamercolor{background canvas}{bg=matryoshkevGreyLight}
+% \setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{example-image.jpg}}
+\begin{frame}{}
+	\begin{columns}
+		\column{0.6\textwidth}
+		\titlemessage{Key findings}\bigskip\bigskip
+%		\begin{itemize}
+%			\begin{normalsize}
+%			\item Last slide should be the most important take-home messages
+%			\item With a cool picture from your work
+%			\item Then say "So, thanks for your attention. I'd be happy to take any questions."
+%			\item Leave this slide up during questions
+%			\end{normalsize}
+%		\end{itemize}
+		Last slide should be the most important take-home messages \par
+		\medskip With a cool picture from your work \par
+		\medskip Then say "So, thanks for your attention. I'd be happy to take any questions." \par
+		\medskip Leave this slide up during questions \par
+		\bigskip\bigskip
+		\begin{scriptsize}
+			Author \textit{et al.}~(YYYY) ``Published results'' \textit{Journal} VV:PPPP \par
+			Author \textit{et al.}~(Preprint) ``Preprint results'' \textit{bioRxiv} \par
+		\end{scriptsize}
+		\column{0.4\textwidth}
+		\strut
+		% \frame{\includegraphics[width=\linewidth,height=0.85\paperheight]{example-image}}
+	\end{columns}
+\end{frame}
+}
+
+%%
+%% EXTRA SLIDES
+%% 
+
+\section{Extra results}
+
+\begin{frame}{}
+	\titlemessage{Include less-important results as optional slides}
+	\bigskip\medskip
+	\begin{columns}[T]
+		\column{0.4\textwidth}
+		Often relevant to audience questions \par
+		\medskip Or post-talk discussion \par
+		\column{0.51\textwidth}
+		\begin{centering}%
+			\frame{\includegraphics[width=\textwidth]{example-image}}\par%
+			% \includegraphics[width=\linewidth]{methods-exptl-design}\par%
+		\end{centering}	
+	\end{columns}
+\end{frame}
+
+%%
+%% NAVIGATION
+%%
+
+% Use \section{} to create bookmarks for this slide
+% Only include parts you'll likely want to go back to
+\begin{frame}{}
+	\tableofcontents
+\end{frame}
+
+
+\end{document}
